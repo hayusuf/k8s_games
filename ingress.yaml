@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: games-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+  - secretName: tls-secret-prd
+    hosts:
+      - mario.yusufhaydar.com
+      - tetris.yusufhaydar.com
+
+  rules:
+  - host: mario.yusufhaydar.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mario
+            port:
+              number: 80
+
+  - host: tetris.yusufhaydar.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tetris
+            port:
+              number: 80
+
