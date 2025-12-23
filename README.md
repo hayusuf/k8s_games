@@ -38,5 +38,11 @@ Using the Terraform article as a guide, I grabbed the tf files, making some smal
 
 
 
+<img src="tetris.png" alt="tetris" height="400"/><img src="mario.png" alt="mario" height="400"/>
+
+
+
+
+
  
 > Written with [StackEdit](https://stackedit.io/).
